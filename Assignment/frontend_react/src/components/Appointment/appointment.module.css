@@ -1,0 +1,55 @@
+.container {
+  min-height: 100vh;
+  height: fit-content;
+  background-color: aqua;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  padding-top: 5vh;
+}
+
+.inputholder {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.inputname,
+.inputfield {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding-right: 0.25vw;
+}
+
+.inputfield {
+  justify-content: start;
+  padding-right: 0;
+  padding-left: 0.25vw;
+}
+
+.button {
+  background-color: brown;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.25rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}

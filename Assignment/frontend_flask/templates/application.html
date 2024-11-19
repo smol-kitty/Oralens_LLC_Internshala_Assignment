@@ -1,0 +1,29 @@
+{% extends "dashboard.html" %} {% block content %}
+<div class="application">
+  <div class="inputholder">
+    <label class="inputname" for="name">Name:</label>
+    <div class="inputfield">
+      <input type="text" id="name" name="name" required />
+    </div>
+  </div>
+  <div class="inputholder">
+    <label class="inputname" for="age">Age:</label>
+    <div class="inputfield">
+      <select id="age" name="age" required>
+        <option value="" disabled selected>Select Age</option>
+        {% for i in range(101) %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="inputholder">
+    <label class="inputname" for="file">Medical History:</label>
+    <div class="inputfield">
+      <input type="file" id="file" name="file" required />
+    </div>
+  </div>
+  <div class="button">Submit</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="dashboard">
+      <a href="{{ url_for('home') }}" class="component">Home</a>
+      <a href="{{ url_for('application') }}" class="component">Appointment</a>
+      <a class="component">Self-Diagnonsis</a>
+      <a class="component">Hospital Visit</a>
+      <a class="component">About Us</a>
+    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    <script>
+      $(document).ready(function () {
+        $(document).on("submit", "#applicationForm", function (e) {
+          e.preventDefault();
+
+          var formData = new FormData(this);
+          $.ajax({
+            url: "{{ url_for('application') }}",
+            method: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+              alert(response);
+            },
+            error: function (error) {
+              alert("Error submitting form");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
